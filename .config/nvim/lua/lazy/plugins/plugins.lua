@@ -19,6 +19,7 @@ return {
   "hrsh7th/nvim-cmp",
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
+  "mfussenegger/nvim-jdtls",
   "jiangmiao/auto-pairs",
   "sheerun/vim-polyglot",
   "chriskempson/vim-tomorrow-theme"

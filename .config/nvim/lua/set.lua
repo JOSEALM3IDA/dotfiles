@@ -15,7 +15,7 @@ vim.opt.wrap = false        -- Don't wrap lines
 vim.opt.scrolloff = 8
 vim.opt.termguicolors = true
 vim.opt.updatetime = 50
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "100"
 
 -- Search settings
 vim.opt.ignorecase = true   -- Ignore case in search patterns
