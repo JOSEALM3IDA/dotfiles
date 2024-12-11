@@ -1,4 +1,4 @@
-vim.keymap.set("n", " ", "<Nop", { silent = true, remap = false})
+vim.keymap.set("n", " ", "<Nop>", { silent = true, remap = false})
 vim.g.mapleader = " " 
 vim.g.maplocalleader="\\"
 
@@ -20,3 +20,8 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+vim.keymap.set('i', '<C-j>', '<Esc>jgi', { noremap = true, silent = true })
+vim.keymap.set('i', '<C-k>', '<Esc>kgi', { noremap = true, silent = true })
+vim.keymap.set('i', '<C-h>', '<Esc>hgi', { noremap = true, silent = true })
+vim.keymap.set('i', '<C-l>', '<Esc>lgi', { noremap = true, silent = true })
