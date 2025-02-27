@@ -1,0 +1,4 @@
+let mapleader = " "
+map <Leader>ff <action>(com.mituuz.fuzzier.Fuzzier)
+map <C-p> <action>(com.mituuz.fuzzier.FuzzierVCS)
+map <Leader>fs <action>(com.mituuz.fuzzier.FuzzyGrep)
