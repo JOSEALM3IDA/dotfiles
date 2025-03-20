@@ -7,4 +7,5 @@ return {
   "jiangmiao/auto-pairs",
   "sheerun/vim-polyglot",
   "folke/which-key.nvim",
+  "theprimeagen/vim-be-good"
 }

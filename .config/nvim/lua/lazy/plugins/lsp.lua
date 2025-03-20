@@ -27,6 +27,7 @@ return {
                 "jdtls",
                 "lua_ls",
                 "bashls",
+                "rust_analyzer",
             },
 
             handlers = {
