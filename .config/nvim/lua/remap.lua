@@ -26,6 +26,10 @@ vim.keymap.set('i', '<C-k>', '<Esc>kgi', { noremap = true, silent = true })
 vim.keymap.set('i', '<C-h>', '<Esc>hgi', { noremap = true, silent = true })
 vim.keymap.set('i', '<C-l>', '<Esc>lgi', { noremap = true, silent = true })
 
+vim.keymap.set("v", "<C-c>", '"+y', { noremap = true, silent = true })
+vim.keymap.set("i", "<C-v>", '<C-r>+', { noremap = true, silent = true })
+
+
 -- "Bad habits"
 vim.keymap.set('n', '<PageUp>', '<Nop>', { noremap = true, silent = true }) -- Use <C-u> / <C-b>
 vim.keymap.set('n', '<PageDown>', '<Nop>', { noremap = true, silent = true }) -- Use <C-d> / <C-f>
