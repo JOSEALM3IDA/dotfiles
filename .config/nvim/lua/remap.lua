@@ -29,6 +29,7 @@ vim.keymap.set('i', '<C-l>', '<Esc>lgi', { noremap = true, silent = true })
 vim.keymap.set("v", "<C-c>", '"+y', { noremap = true, silent = true })
 vim.keymap.set("i", "<C-v>", '<C-r>+', { noremap = true, silent = true })
 
+vim.keymap.set('n', '<C-s>', ':w<Enter>')
 
 -- "Bad habits"
 vim.keymap.set('n', '<PageUp>', '<Nop>', { noremap = true, silent = true }) -- Use <C-u> / <C-b>
