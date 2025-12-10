@@ -1,4 +1,31 @@
+set relativenumber
+set which-key
+set notimeout
+
+sethandler <C-c> a:ide
+sethandler <C-v> a:ide
+
 let mapleader = " "
 map <Leader>ff <action>(com.mituuz.fuzzier.Fuzzier)
 map <C-p> <action>(com.mituuz.fuzzier.FuzzierVCS)
 map <Leader>fs <action>(com.mituuz.fuzzier.FuzzyGrep)
+
+nnoremap <Esc> :action CloseActiveTab<CR>
+inoremap <Esc> <Esc>:action CloseActiveTab<CR>
+vnoremap <Esc> <Esc>
+
+nmap <C-s> :w<CR>
+nmap <CR> o<Esc>k
+nmap <S-CR> O<Esc>j
+
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gu :action FindUsages<CR>
+
+nnoremap <Leader>r :action Run<CR>
+nnoremap <Leader>d :action Debug<CR>
+nnoremap <Leader>s :action Stop<CR>
+nnoremap <Leader>i :action ShowErrorDescription<CR>
+nnoremap <Leader>= :action ReformatCode<CR>
+
+inoremap <C-y> :action EditorChooseLookupItem<CR>
