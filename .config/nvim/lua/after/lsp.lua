@@ -16,7 +16,7 @@ lspconfig_defaults.capabilities = vim.tbl_deep_extend(
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
   callback = function(event)
-    local opts = {buffer = event.buf}
+    local opts = { buffer = event.buf }
 
     vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
     vim.keymap.set('n', 'gd', '<cmd>Telescope lsp_definitions<cr>', opts)
@@ -26,10 +26,23 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>', opts)
     vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
     vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-    vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
+    vim.keymap.set({ 'n', 'x' }, '<leader>=', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
     vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-    vim.keymap.set('n', '<F6>', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
+    vim.keymap.set('n', '<leader>i', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
+    vim.keymap.set('n', '<leader>h', function()
+      local bufnr = vim.api.nvim_get_current_buf()
+      vim.lsp.inlay_hint.enable(
+        not vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr }),
+        { bufnr = bufnr }
+      )
+    end)
   end,
+})
+
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = false,
+  underline = true,
 })
 
 -- Autocompletion through nvim-cmp
@@ -37,7 +50,7 @@ local cmp = require('cmp')
 
 cmp.setup({
   sources = {
-    {name = 'nvim_lsp'},
+    { name = 'nvim_lsp' },
   },
   snippet = {
     expand = function(args)

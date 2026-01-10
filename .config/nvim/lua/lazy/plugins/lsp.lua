@@ -28,6 +28,7 @@ return {
                 "lua_ls",
                 "bashls",
                 "rust_analyzer",
+                "pyright"
             },
 
             handlers = {
@@ -82,8 +83,8 @@ return {
                     }
 
                     require('lspconfig').jdtls.setup({
-                        cmd = cmd;
-                        capabilities = capabilities;
+                        cmd = cmd,
+                        capabilities = capabilities,
                     })
                 end,
             }
@@ -107,8 +108,8 @@ return {
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' }, -- For luasnip users.
             }, {
-                    { name = 'buffer' },
-                })
+                { name = 'buffer' },
+            })
         })
 
         vim.diagnostic.config({
