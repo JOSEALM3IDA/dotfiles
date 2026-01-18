@@ -1,6 +1,6 @@
-vim.keymap.set("n", " ", "<Nop>", { silent = true, remap = false})
+vim.keymap.set("n", " ", "<Nop>", { silent = true, remap = false })
 vim.g.mapleader = " "
-vim.g.maplocalleader="\\"
+vim.g.maplocalleader = "\\"
 
 -- General keymaps
 vim.keymap.set("n", "<Enter>", "o<ESC>k")
@@ -32,5 +32,5 @@ vim.keymap.set("i", "<C-v>", '<C-r>+', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-s>', ':w<Enter>')
 
 -- "Bad habits"
-vim.keymap.set('n', '<PageUp>', '<Nop>', { noremap = true, silent = true }) -- Use <C-u> / <C-b>
+vim.keymap.set('n', '<PageUp>', '<Nop>', { noremap = true, silent = true })   -- Use <C-u> / <C-b>
 vim.keymap.set('n', '<PageDown>', '<Nop>', { noremap = true, silent = true }) -- Use <C-d> / <C-f>
