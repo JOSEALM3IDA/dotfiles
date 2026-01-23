@@ -1,17 +1,20 @@
 set relativenumber
 set which-key
 set notimeout
+set multicursor
+set peekabo
 
 sethandler <C-c> a:ide
 sethandler <C-v> a:ide
 
 let mapleader = " "
+
 map <Leader>ff <action>(com.mituuz.fuzzier.Fuzzier)
 map <C-p> <action>(com.mituuz.fuzzier.FuzzierVCS)
 map <Leader>fs <action>(com.mituuz.fuzzier.FuzzyGrep)
 
 nnoremap <Esc> :action CloseActiveTab<CR>
-inoremap <Esc> <Esc>:action CloseActiveTab<CR>
+inoremap <Esc> <Esc>
 vnoremap <Esc> <Esc>
 
 nmap <C-s> :w<CR>
@@ -29,3 +32,12 @@ nnoremap <Leader>i :action ShowErrorDescription<CR>
 nnoremap <Leader>= :action ReformatCode<CR>
 
 inoremap <C-y> :action EditorChooseLookupItem<CR>
+inoremap <C-k> <Up>
+inoremap <C-j> <Down>
+
+nmap <C-e> <action>(HarpoonerToggleMenu)
+nmap <leader>a <action>(HarpoonerToggleFile)
+nmap <C-h> <action>(HarpoonerOpenFile0)
+nmap <C-j> <action>(HarpoonerOpenFile1)
+nmap <C-k> <action>(HarpoonerOpenFile2)
+nmap <C-l> <action>(HarpoonerOpenFile3)
