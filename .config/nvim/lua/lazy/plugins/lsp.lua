@@ -30,25 +30,10 @@ return {
                 "rust_analyzer",
                 "pyright"
             },
-
             handlers = {
                 function(server_name)
                     require("lspconfig")[server_name].setup {
                         capabilities = capabilities
-                    }
-                end,
-
-                ["lua_ls"] = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.lua_ls.setup {
-                        capabilities = capabilities,
-                        settings = {
-                            Lua = {
-                                diagnostics = {
-                                    globals = { "vim", "it", "describe", "before_each", "after_each" },
-                                }
-                            }
-                        }
                     }
                 end,
 
@@ -87,8 +72,21 @@ return {
                         capabilities = capabilities,
                     })
                 end,
+
             }
         })
+
+        vim.lsp.config.lua_ls = {
+            capabilities = capabilities,
+            settings = {
+                Lua = {
+                    diagnostics = {
+                        globals = { "vim", "it", "describe", "before_each", "after_each" },
+                    }
+                }
+            }
+        }
+
 
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
